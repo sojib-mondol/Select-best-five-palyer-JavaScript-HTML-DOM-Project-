@@ -6,9 +6,13 @@ function btnClick(item, btn) {
     button.disabled = true;
     button.style.backgroundColor = '#A2A9AF';
 
-
+    // inserting the names of player in selected fields 
     const playerField = document.getElementById(item);
-    console.log('clicked');
+    const selectedField = document.getElementById('selected-field');
+    const creatList = document.createElement('p');
+    let number = buttonClick;
+    creatList.innerText = number+1 +". " + playerField.innerText;
+    selectedField.appendChild(creatList);
     
     // button click count
     buttonClick ++;
@@ -17,3 +21,17 @@ function btnClick(item, btn) {
         return;
     }
 }
+
+
+
+document.getElementById('calculate-field').addEventListener('click', function(){
+  
+    // this functon is called from comon.js file, this will return input value
+    const amountPerPlayer = getInputFieldValueById('amount-per-player-field'); 
+    const playerExpenses = buttonClick * amountPerPlayer;
+    
+    // inserting the Expences into the Expenses field  
+    const playerExpensesFiled = document.getElementById('player-expenses');
+    playerExpensesFiled.innerText = playerExpenses;
+
+});
