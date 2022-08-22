@@ -1,4 +1,31 @@
-.text-style {
-    color: rgb(247, 206, 0);
-    text-align: center;
+body{
+    
+    background-color: rgb(0, 0, 0);
+}
+@keyframes positiony {
+    0%{
+        left: 0;
+    }
+    50%{
+        left: 50px;
+    }
+    100%{
+        left: 0;
+    }
+}
+.img-style{
+    width:100%;
+    display: block; 
+    position: relative;
+    animation: positiony 8s infinite;
+}
+.text-style{
+    font-family: 'Berkshire Swash';
+}
+p{
+    color: white;
+}
+
+.text-color{
+    color: #FF5E19;
 }
