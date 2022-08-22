@@ -6,20 +6,25 @@ function btnClick(item, btn) {
     button.disabled = true;
     button.style.backgroundColor = '#A2A9AF';
 
+    // button click count
+    buttonClick ++;
+    if(buttonClick > 5) {
+        button.disabled = false;
+        button.style.backgroundColor = '#015196';
+        alert("You have riched Maximum Selection");
+        buttonClick = 5;
+        return;
+    }
+    
     // inserting the names of player in selected fields 
     const playerField = document.getElementById(item);
     const selectedField = document.getElementById('selected-field');
     const creatList = document.createElement('p');
     let number = buttonClick;
-    creatList.innerText = number+1 +". " + playerField.innerText;
+    creatList.innerText = number +". " + playerField.innerText;
     selectedField.appendChild(creatList);
     
-    // button click count
-    buttonClick ++;
-    if(buttonClick == 5) {
-        alert("You have riched Maximum Selection")
-        return;
-    }
+    
 }
 
 
