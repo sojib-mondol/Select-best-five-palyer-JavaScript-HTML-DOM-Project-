@@ -23,7 +23,7 @@ function btnClick(item, btn) {
 }
 
 
-
+// for calculate selected player expences 
 document.getElementById('calculate-field').addEventListener('click', function(){
   
     // this functon is called from comon.js file, this will return input value
@@ -34,4 +34,18 @@ document.getElementById('calculate-field').addEventListener('click', function(){
     const playerExpensesFiled = document.getElementById('player-expenses');
     playerExpensesFiled.innerText = playerExpenses;
 
+});
+
+// for total claculation 
+document.getElementById('btn-total-calculation').addEventListener('click', function(){
+    const managerFieldValue = getInputFieldValueById('manager-field');
+    const coahFieldValue = getInputFieldValueById('coah-field');
+    const playerExpenses = getTextFieldValueById('player-expenses');
+
+    // total cost
+    const total = managerFieldValue + coahFieldValue + playerExpenses;
+
+    const totalField = document.getElementById('total-field');
+    totalField.innerText = total;
+    
 });
